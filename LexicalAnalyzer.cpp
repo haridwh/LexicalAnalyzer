@@ -46,7 +46,6 @@ int getToken(string lexic);
   */
 string validator(vector<int> tokens);
 
-
 /**Main Program*/
 int main(){
   string input;
