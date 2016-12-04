@@ -72,7 +72,7 @@ int main(){
     cout<<endl<<validator(tokens)<<endl<<endl;
     lexic.clear();
     tokens.clear();
-    cout<<"Input : ";
+    cout<<"Input 'exit' untuk keluar program!"<<endl<<"Input : ";
     getline(cin, input);
   }
   return 0;
@@ -197,21 +197,21 @@ string validator(vector<int> tokens){
           }
           break;
         case 3:
-          if (state == '2' && (tokens[i+1] == 1 || tokens[i+1] == 9)) {
+          if (state == '2' && (tokens[i+1] == 1 || tokens[i+1] == 2 || tokens[i+1] == 9)) {
               state = '1';
           }else{
             return "TIDAK VALID";
           }
           break;
         case 4:
-          if (state == '2' && (tokens[i+1] == 1 || tokens[i+1] == 9)) {
+          if (state == '2' && (tokens[i+1] == 1 || tokens[i+1] == 2 || tokens[i+1] == 9)) {
             state = '1';
           }else{
             return "TIDAK VALID";
           }
           break;
         case 5:
-          if (state == '2' && (tokens[i+1] == 1 || tokens[i+1] == 9)) {
+          if (state == '2' && (tokens[i+1] == 1 || tokens[i+1] == 2 || tokens[i+1] == 9)) {
             state = '1';
           }else{
             return "TIDAK VALID";
@@ -231,7 +231,7 @@ string validator(vector<int> tokens){
           }
           break;
         case 8:
-          if (state == '2' && (tokens[i+1] == 1 || tokens[i+1] == 9)) {
+          if (state == '2' && (tokens[i+1] == 1 || tokens[i+1] == 2 || tokens[i+1] == 9)) {
             state = '1';
           }else{
             return "TIDAK VALID";
