@@ -48,27 +48,33 @@ string validator(vector<int> tokens);
 
 /**Main Program*/
 int main(){
-  string input;
+  string input="";
   vector<string> lexic;
   vector<int> tokens;
   int token;
   cout<<"Input : ";
   getline(cin, input);
-  input = trim(lowcase(input));
-  parser(input,lexic);
-  cout<<"Output : ";
-  for (int i=0; i<lexic.size();i++){
-    token = getToken(lexic[i]);
-    if (token!=0) {
-      tokens.push_back(token);
-      cout<<token<<" ";
-    }else{
-      cout<<"error";
-      i=lexic.size();
+  while (lowcase(input) != "exit") {
+    input = trim(lowcase(input));
+    parser(input,lexic);
+    cout<<"Token : ";
+    for (int i=0; i<lexic.size();i++){
+      token = getToken(lexic[i]);
+      if (token!=0) {
+        tokens.push_back(token);
+        cout<<token<<" ";
+      }else{
+        tokens.push_back(token);
+        cout<<"error";
+        i=lexic.size();
+      }
     }
+    cout<<endl<<validator(tokens)<<endl<<endl;
+    lexic.clear();
+    tokens.clear();
+    cout<<"Input : ";
+    getline(cin, input);
   }
-  cout<<endl<<validator(tokens);
-  cout<<endl;
   return 0;
 }
 
@@ -175,6 +181,9 @@ string validator(vector<int> tokens){
     char state = '1';
     for (int i = 0; i < tokens.size(); i++) {
       switch (tokens[i]) {
+        case 0:
+          return "TIDAK VALID";
+          break;
         case 1:
           if (state == '1') {
             state = '2';
