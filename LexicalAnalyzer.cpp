@@ -52,7 +52,7 @@ int main(){
   vector<string> lexic;
   vector<int> tokens;
   int token;
-  cout<<"Input : ";
+  cout<<"Input 'exit' untuk keluar program!"<<endl<<"Input : ";
   getline(cin, input);
   while (lowcase(input) != "exit") {
     input = trim(lowcase(input));
@@ -192,20 +192,29 @@ string validator(vector<int> tokens){
           }
           break;
         case 2:
+          if (!(tokens[i+1] == 1 || tokens[i+1] == 9)) {
+            return "TIDAK VALID";
+          }
           break;
         case 3:
-          if (state == '2') {
-            state = '1';
+          if (state == '2' && (tokens[i+1] == 1 || tokens[i+1] == 9)) {
+              state = '1';
+          }else{
+            return "TIDAK VALID";
           }
           break;
         case 4:
-          if (state == '2') {
+          if (state == '2' && (tokens[i+1] == 1 || tokens[i+1] == 9)) {
             state = '1';
+          }else{
+            return "TIDAK VALID";
           }
           break;
         case 5:
-          if (state == '2') {
+          if (state == '2' && (tokens[i+1] == 1 || tokens[i+1] == 9)) {
             state = '1';
+          }else{
+            return "TIDAK VALID";
           }
           break;
         case 6:
@@ -222,8 +231,10 @@ string validator(vector<int> tokens){
           }
           break;
         case 8:
-          if (state == '2') {
+          if (state == '2' && (tokens[i+1] == 1 || tokens[i+1] == 9)) {
             state = '1';
+          }else{
+            return "TIDAK VALID";
           }
           break;
         case 9:
